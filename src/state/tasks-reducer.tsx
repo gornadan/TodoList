@@ -45,8 +45,9 @@ export const tasksReducer = (state: TasksStateType, action: ActionType) => {
             return copyState;
         }
         case "ADD-TASK": {
+            debugger
             let copyState = {...state};
-            let task = {id: v1(), isDone: false, title: action.title}
+            let task = {id: v1(), title: action.title, isDone: false}
             copyState[action.toDoListID] = [task, ...copyState[action.toDoListID]]
             return copyState
         }
@@ -73,11 +74,11 @@ export const tasksReducer = (state: TasksStateType, action: ActionType) => {
                 })
             }
         case "ADD-TODOLIST" : {
-            return {
-                ...state,
-                [action.toDoListID]: []
+            let stateCopy = {...state};
+            stateCopy[action.toDoListID] = [];
+            return stateCopy
 
-            }
+
         }
         case "REMOVE-TODOLIST": {
                 let stateCopy = {...state};

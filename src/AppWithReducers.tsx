@@ -42,7 +42,7 @@ function AppWithReducers() {
 
     let [toDoLists, dispatchToTodoListsReducer] = useReducer(todoListsReducer, [
         {id: toDoListID1, title: "What to learn", filter: "all"},
-        {id: toDoListID2, title: "What to buy", filter: "all"},
+        {id: toDoListID2, title: "What to buy", filter: "all"}
     ])
 
 

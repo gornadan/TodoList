@@ -6,22 +6,23 @@ import {tasksReducer} from "./tasks-reducer";
 
 
 export const rootReducer = combineReducers({
-    todoLists: todoListsReducer,
-    tasks: tasksReducer
+    tasks: tasksReducer,
+    todoLists: todoListsReducer
 });
 
 // type AppRootReducer = {
 //     todoLists: Array<ToDoListType>
 //     tasks: TasksStateType
 // }
+export const store = createStore(rootReducer);
 
 export type AppRootState = ReturnType<typeof rootReducer>
 
- export const store = createStore(rootReducer);
+
 
 
  //@ts-ignore
-window.store = store
+// window.store = store
 
 
 
